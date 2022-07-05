@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>E3 Tile Map</title>
+
+		<meta name="author" content="Elias Schütt">
+		<meta name="description" content="A web based tile map editor for all kinds of 2d games and applications.">
+		<meta name="keywords" content="online, tile, map, editor, html5">
+
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:600">
+		<link rel="stylesheet" type="text/css" href="build/build.css">
+
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	</head>
+	<body onselectstart="return false;">
+		<div id="loading_screen">
+			<div>
+				<div>
+					<div>
+						<span class="fa fa-cog fa-spin"></span>
+						<div align="center">
+							<img src="img/icons/logo.png" />
+						</div>
+						<h1>E3 Tile Map initializing ...</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="dialog" class="dialog"></div>
+		<ul id="menubar">
+			<li>
+				File
+				<ul>
+					<li><a href="index_en.html" target="_blank"><span class="fa fa-file"></span>New</a></li>
+					<li data-template="import_en"><span class="fa fa-sign-in"></span> Import</li>
+					<li id="export"><span class="fa fa-sign-out"></span> Export</li>
+				</ul>
+			</li>
+			<li>
+				Edit
+				<ul>
+					<li data-template="canvas_settings_en"><span class="fa fa-cog"></span> Canvas Settings</li>
+				</ul>
+			</li>
+			<li>
+				View
+				<ul>
+					<li data-toggle="visibility:#viewport"><span class="fa fa-check-square-o"></span> Viewport</li>
+					<li data-toggle="class:nogrid:#canvas"><span class="fa fa-check-square-o"></span> Grid</li>
+					<li data-toggle="fullscreen:body"><span class="fa fa-expand"></span> <span class="text">Fullscreen</span></li>
+				</ul>
+			</li>
+			<li>
+				Help
+				<ul>
+					<li data-template="controls_en"><span class="fa fa-question-circle"></span> Controls</li>
+					<li><span class="fa fa-question-circle"></span>  <a target="_blank" href="https://www.youtube.com/channel/UC0UpyDYZnPKChdtMQ9cWwBA">Online Tutorials</a></li>
+					<li data-template="about_en"><span class="fa fa-info-circle"></span> About</li>
+				</ul>
+			</li>
+
+			<ul class="flags">
+				<li><a title="pt-br" href="index.html"><img src="img/icons/flag_brazil.png" /> </a> </li>
+				<li><a title="en-us" href="index_en.html"><img src="img/icons/flag_usa.png" /></a>  </li>
+				<li><a title="es-sp" href="index_sp.html"><img src="img/icons/flag_spain.png" /></a>  </li>
+			</ul>
+		</ul>
+		<div id="content-wrapper">
+			<div id="toolbar" class="border-box">
+				<section id="layers">
+					<h2>Layers</h2>
+					<div>
+						<ul id="layerlist"></ul>
+					</div>
+				</section>
+				<section style="display:none" id="tilesets">
+					<h2>Tilesets</h2>
+					<div>
+						<div class="loading"><img src="img/icons/loading.gif" alt="loading"></div>
+						<div id="custom_select" class="border-box"><select style="display: none" name="tileset_select"></select></div>
+						<div id="tileset"><div id="tileset_container"></div></div>
+					</div>
+				</section>
+			</div>
+			<div id="canvas_wrapper">
+				<div id="canvas" oncontextmenu="return false;">
+					<div id="tiles"></div>
+					<div class="selection"></div>
+					<div id="viewport"></div>
+					<div class="warning border-box"></div>
+				</div>
+			</div>	
+		</div>
+		<script> var language = "en_us";</script>
+		<script type="text/javascript" src="build/build.js"></script>
+	</body>
+</html>
