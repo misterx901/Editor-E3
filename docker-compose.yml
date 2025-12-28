@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  editor-e3:
+    container_name: editor-e3
+    
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    ports:
+      - "3007:3007"      
+    restart: unless-stopped
